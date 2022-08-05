@@ -1,7 +1,7 @@
 {
   "name": "ittng-snmp",
   "version": "1.0.0",
-  "description": "",
+  "description": "get data from snmp protocol",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,7 @@
     "url": "git+https://github.com/ak4code/ittng-snmp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "akdev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ak4code/ittng-snmp/issues"
