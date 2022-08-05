@@ -1,5 +1,5 @@
 const hostSNMP = async () => {
-    const response = await window.snmp.mib()
+    const response = await window.snmp.mib(document.getElementById('ip').value)
     console.log(response) // prints out 'pong'
     return response
 }

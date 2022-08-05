@@ -10,11 +10,12 @@ const createWindow = () => {
             preload: path.join(__dirname, 'preload.js')
         }
     });
-    ipcMain.handle('mib', async () => await getSnmp())
+
     win.loadFile('index.html');
 };
 
-app.whenReady().then(() => {
+app.whenReady().then(async () => {
+    ipcMain.handle('mib', await getSnmp)
     createWindow();
 
     app.on('activate', () => {

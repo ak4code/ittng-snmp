@@ -1,5 +1,5 @@
 const {contextBridge, ipcRenderer} = require('electron')
 
 contextBridge.exposeInMainWorld('snmp', {
-    mib: () => ipcRenderer.invoke('mib'),
+    mib: (ip) =>  ipcRenderer.invoke('mib', ip),
 })

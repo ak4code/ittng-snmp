@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta
             http-equiv="Content-Security-Policy"
             content="default-src 'self'; script-src 'self'"
@@ -14,6 +14,8 @@
 </head>
 <body>
 <h1>ITTNG SNMP</h1>
+<input id="ip" required type="text" minlength="7" maxlength="15" size="15" value="13.13.1.1"
+       pattern="^((\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.){3}(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$">
 <button id="getSnmp">Получить данные SNMP</button>
 <p id="info"></p>
 </body>

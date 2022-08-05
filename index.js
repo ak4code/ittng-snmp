@@ -1,20 +1,20 @@
 const snmp = require('net-snmp');
 
-var options = {
-    port: 161,
-    retries: 1,
-    timeout: 5000,
-    backoff: 1.0,
-    transport: "udp4",
-    trapPort: 162,
-    version: snmp.Version2c,
-};
-const session = snmp.createSession("13.13.1.1", "public", options);
+module.exports = function getSnmp(event, ip) {
+    console.log(ip)
+    var options = {
+        port: 161,
+        retries: 1,
+        timeout: 5000,
+        backoff: 1.0,
+        transport: "udp4",
+        trapPort: 162,
+        version: snmp.Version2c,
+    };
+    const session = snmp.createSession(`${ip}`, "public", options);
 
-const oids = ["1.3.6.1.2.1.1.5.0", "1.3.6.1.2.1.1.1.0"];
+    const oids = ["1.3.6.1.2.1.1.5.0", "1.3.6.1.2.1.1.1.0", "1.3.6.1.4.1.1347.43.10.1.1.12.1.1", "1.3.6.1.2.1.43.10.2.1.4.1.1"];
 
-
-module.exports = function getSnmp() {
     return new Promise(function (resolve, reject) {
         session.get(oids, function (error, varbinds) {
             if (error) {
