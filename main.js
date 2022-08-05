@@ -2,6 +2,8 @@ const {app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path')
 const getSnmp = require('./index')
 
+if (require('electron-squirrel-startup')) return app.quit();
+
 const createWindow = () => {
     const win = new BrowserWindow({
         width: 800,
